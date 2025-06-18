@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
-* {
+:where(*) {
     margin    : 0;
     padding   : 0;
     box-sizing: border-box;
@@ -8,10 +8,11 @@
 
 html,
 body {
-    width     : 100vw;
-    height    : 100vh;
-    overflow  : hidden;
-    background: url('../img/bg.jpg') no-repeat center center fixed;
+    width          : 100vw;
+    height         : 100vh;
+    overflow       : hidden;
+    background     : url('../img/bg.jpg') no-repeat center center fixed;
+    background-size: cover;
 }
 
 img {
@@ -23,9 +24,8 @@ img {
 }
 
 .hero {
-    width     : 100vw;
-    height    : 100vh;
-    /* padding: 3em; */
+    width : 100vw;
+    height: 100vh;
 }
 
 .pre-loader {
@@ -39,7 +39,6 @@ img {
     align-items    : flex-end;
     justify-content: flex-end;
     gap            : .5em;
-    overflow       : hidden;
     z-index        : 2;
 }
 
@@ -54,22 +53,33 @@ img {
 }
 
 .counter {
-    height     : 100px;
-    display    : flex;
-    font-family: "Playfair Display", serif;
-    font-size  : clamp(2rem, 6vw, 4.7rem);
-    font-weight: 200;
-    line-height: clamp(2.5rem, 8vw, 9.4rem);
-    color      : #fff;
-    clip-path  : polygon(0 0, 100% 0, 100% 100px, 0 100px);
+    display       : flex;
+    font-family   : "Playfair Display", serif;
+    font-size     : clamp(2rem, 6vw, 4.7rem);
+    font-weight   : 200;
+    line-height   : 1;
+    color         : #fff;
+    overflow      : hidden;
+    height        : 1em;
+    vertical-align: bottom;
 }
 
 .digit-1,
 .digit-2,
 .digit-3,
 .digit-4 {
-    position: relative;
-    top     : -15px;
+    position   : relative;
+    display    : inline-block;
+    line-height: 1;
+    top        : -4px;
+}
+
+.num {
+    line-height    : 1;
+    height         : 1em;
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
 }
 
 .offset {
@@ -79,10 +89,10 @@ img {
 
 .progress-bar {
     position  : relative;
-    top       : -15px;
     width     : 0%;
     height    : 4px;
     background: #fff;
+    top        : -10px;
 }
 
 .hero-imgs {
@@ -158,4 +168,3 @@ h1 span {
         right   : -5px;
     }
 }
-
